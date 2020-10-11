@@ -1,0 +1,9 @@
+<h2>Cart</h2>
+<div class="cart-items-container">
+	<shop-cart-item *ngFor="let cartProduct of cartProducts$ | async"
+		[cartItem]="cartProduct"
+		(removeClicked)="onRemoveClicked($event)">
+	</shop-cart-item>
+</div>
+<span class="total-price">Total: {{ cartProductsTotalPrice$ | async }}</span>
+<button (click)="onClearCartClick()">Clear cart</button>
