@@ -1,0 +1,7 @@
+<div class="product-container">
+	<span class="product-name">{{ productInfo.name }}</span>
+	<span>{{ productInfo.description }}</span>
+	<span>{{ productInfo.price | currency:'USD' }}</span>
+	<button [disabled]="!productInfo.isAvailable"
+		(click)="onBuy(productInfo)">Buy</button>
+</div>

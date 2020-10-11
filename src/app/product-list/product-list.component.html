@@ -1,0 +1,5 @@
+<h2>Products</h2>
+<shop-product *ngFor="let product of products"
+	[productInfo]="product"
+	(productBought)="onProductBought($event)">
+</shop-product>

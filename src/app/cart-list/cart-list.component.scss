@@ -1,0 +1,13 @@
+:host {
+	display: block;
+	min-width: 200px;
+
+	.total-price {
+		margin-right: 10px;
+		font-weight: 600;
+	}
+
+	.cart-items-container {
+		min-height: 50vh;
+	}
+}
