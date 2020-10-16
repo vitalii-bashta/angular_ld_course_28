@@ -23,10 +23,12 @@ export class CartListComponent implements OnInit, OnDestroy {
 		this.cartProducts$ = this.cartService.getCartProductListStream();
 		this.cartProductsSubscription = this.cartProducts$
 			.subscribe((products: Product[]) => {
-				this.cartProducts = products
-			})
+				this.cartProducts = products;
+			});
 		this.cartProductsTotalPrice$ = this.cartProducts$
 			.pipe(
+				// думаю, что тут логичнее использовать reduce, поток конечный, нам надо окончательный ответ, а не промежуточные
+				// ну и такую бизнес логику лучше выполнять не в компоненте, а в сервисе и уже получать готовые данные
 				scan((accumulator, currentValue: Product[]) => {
 					return currentValue.length ? accumulator + this.getProductsTotalPrice(currentValue) : 0;
 				}, 0)
