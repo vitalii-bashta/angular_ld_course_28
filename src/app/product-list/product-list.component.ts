@@ -13,7 +13,7 @@ import { ProductsService } from './services/products.service';
 export class ProductListComponent implements OnInit, OnDestroy {
 	products: Product[];
 
-	private productsSubscription = Subscription.EMPTY;
+	private productsSubscription = Subscription.EMPTY; // для чего используется EMPTY?
 
 	constructor(
 		private productsService: ProductsService,

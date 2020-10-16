@@ -17,6 +17,7 @@ export class ProductComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	// можно не передавать данные из шаблона, они тут есть в this.productInfo
 	onBuy(product: Product): void {
 		console.log(`You have bought ${product.name}`);
 		this.productBought.emit(product);
