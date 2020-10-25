@@ -13,6 +13,6 @@ export class AppComponent implements OnInit {
 	constructor(private renderer: Renderer2) {}
 
 	ngOnInit(): void {
-		this.renderer.setProperty(this.title.nativeElement, 'textContent', APP_TITLE)
+		this.renderer.setProperty(this.title.nativeElement, 'textContent', APP_TITLE);
 	}
 }
