@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { Product } from '../../../models';
+import { Product } from '../../models';
 
 @Component({
 	selector: 'shop-product',
@@ -17,8 +17,8 @@ export class ProductComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	onBuy(product: Product): void {
-		console.log(`You have bought ${product.name}`);
-		this.productBought.emit(product);
+	onBuy(): void {
+		console.log(`You have bought ${this.productInfo.name}`);
+		this.productBought.emit(this.productInfo);
 	}
 }

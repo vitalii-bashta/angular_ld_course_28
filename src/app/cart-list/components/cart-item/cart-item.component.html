@@ -1,4 +1,21 @@
-<div class="cart-item-container">
-	<span>{{ cartItem.name }}</span>
-	<button (click)="onRemoveButtonClick()">Remove</button>
+
+<div shopHighlight class="cart-item-container">
+	<div class="cart-item-name-container">
+		<span>{{ cartItem.name }}</span>
+		<button mat-icon-button
+			(click)="onRemoveButtonClick()">
+			<mat-icon>close</mat-icon>
+		</button>
+	</div>
+	<div class="quantity-container">
+		<span>Qty: {{ cartItem?.amountInCart }}</span>
+		<button mat-icon-button
+			(click)="onAddItem()">
+			<mat-icon>add</mat-icon>
+		</button>
+		<button mat-icon-button
+			(click)="onRemoveItem()">
+			<mat-icon>remove</mat-icon>
+		</button>
+	</div>
 </div>

@@ -1,7 +1,16 @@
-.cart-item-container {
-	display: flex;
-	width: 12vw;
-	min-height: 30px;
-	justify-content: space-between;
-	align-items: center;
+:host {
+	display: block;
+	margin-bottom: 10px;
+
+	.cart-item-container {
+		border: 2px solid lightgray;
+		border-radius: 5px;
+		padding: 5px;
+
+		.cart-item-name-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
 }

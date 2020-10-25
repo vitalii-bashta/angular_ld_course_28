@@ -1,20 +1,19 @@
-import { Product } from '../models';
-import { CategoryOptions } from '../first/first.component';
+import { Product } from '../product-list/models';
 
 export const productsMockData: Product[] = [
 	{
 		name: 'Iphone XS Max',
 		description: 'One of the best phones out there',
 		price: 1000,
-		category: CategoryOptions.Electronics,
+		category: 'electronics',
 		isAvailable: true,
 		id: '1'
 	},
 	{
-		name: 'Iphone XS Max',
+		name: 'Iphone XS',
 		description: 'One of the best phones out there',
 		price: 980,
-		category: CategoryOptions.Electronics,
+		category: 'electronics',
 		isAvailable: true,
 		id: '2'
 	},
@@ -22,7 +21,7 @@ export const productsMockData: Product[] = [
 		name: 'Iphone 12',
 		description: 'Overpriced piece of junk',
 		price: 1500,
-		category: CategoryOptions.Electronics,
+		category: 'electronics',
 		isAvailable: false,
 		id: '3'
 	},
@@ -30,7 +29,7 @@ export const productsMockData: Product[] = [
 		name: 'COVID-19 Vaccine',
 		description: 'Coronavirus cure',
 		price: 200,
-		category: CategoryOptions.Healthcare,
+		category: 'healthcare',
 		isAvailable: false,
 		id: '4'
 	},
@@ -38,7 +37,7 @@ export const productsMockData: Product[] = [
 		name: 'NASA T-shirt',
 		description: `Every developer's must-have`,
 		price: 30,
-		category: CategoryOptions.Clothing,
+		category: 'clothing',
 		isAvailable: true,
 		id: '5'
 	},
@@ -46,7 +45,7 @@ export const productsMockData: Product[] = [
 		name: 'NASA T-shirt',
 		description: `Every developer's must-have`,
 		price: 30,
-		category: CategoryOptions.Clothing,
+		category: 'clothing',
 		isAvailable: true,
 		id: '6'
 	}
