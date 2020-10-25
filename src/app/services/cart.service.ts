@@ -43,8 +43,8 @@ export class CartService {
 		};
 		const isProductInCart = Boolean(products.find((p) => p.id === product.id));
 
-		if(isProductInCart) {
-			this.increaseProductAmount(product, 1)
+		if (isProductInCart) {
+			this.increaseProductAmount(product, 1);
 		} else {
 			this.setProductCart([...products, transformedProduct]);
 			this.updateCartData();
@@ -53,10 +53,10 @@ export class CartService {
 
 	increaseProductAmount(product: Product, amount: number): void {
 		const products = this.getProductCartValue().map((p: Product) => {
-			if(p.id === product.id) {
+			if (p.id === product.id) {
 				let transformedProduct: Product;
 
-				if(p.amountInCart) {
+				if (p.amountInCart) {
 					transformedProduct = {
 						...p,
 						amountInCart: p.amountInCart + amount
@@ -67,9 +67,9 @@ export class CartService {
 						amountInCart: amount
 					};
 				}
-				return transformedProduct
+				return transformedProduct;
 			}
-			return p
+			return p;
 		});
 
 		this.setProductCart(products);
@@ -79,10 +79,10 @@ export class CartService {
 	decreaseProductAmount(product: Product, amount: number): void {
 		const isRemoved = product.amountInCart <= 1;
 		const products = this.getProductCartValue().map((p: Product) => {
-			if(p.id === product.id) {
+			if (p.id === product.id) {
 				let transformedProduct: Product;
 
-				if(p.amountInCart > 1) {
+				if (p.amountInCart > 1) {
 					transformedProduct = {
 						...p,
 						amountInCart: p.amountInCart - amount
@@ -94,8 +94,8 @@ export class CartService {
 			return p;
 		});
 
-		if(isRemoved) {
-			this.removeProductFromCart(product)
+		if (isRemoved) {
+			this.removeProductFromCart(product);
 		} else {
 			this.setProductCart(products);
 			this.updateCartData();
@@ -137,7 +137,7 @@ export class CartService {
 		return products.reduce((accumulator: number, currentValue: Product) => {
 			accumulator += currentValue.amountInCart;
 			return accumulator;
-		}, 0)
+		}, 0);
 	}
 
 	private updateCartData(): void {

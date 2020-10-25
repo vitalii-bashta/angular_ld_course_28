@@ -5,7 +5,7 @@ export interface Product {
 	category: ProductCategory;
 	isAvailable: boolean;
 	id: string;
-	amountInCart?: number
+	amountInCart?: number;
 }
 
 export type ProductCategory = 'healthcare' | 'electronics' | 'clothing';
