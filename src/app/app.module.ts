@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
@@ -16,7 +17,8 @@ import { CartListModule } from './cart-list/cart-list.module';
 
 		FirstModule,
 		ProductListModule,
-		CartListModule
+		CartListModule,
+		BrowserAnimationsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

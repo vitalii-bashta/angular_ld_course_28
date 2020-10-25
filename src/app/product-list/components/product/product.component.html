@@ -3,5 +3,5 @@
 	<span>{{ productInfo.description }}</span>
 	<span>{{ productInfo.price | currency:'USD' }}</span>
 	<button [disabled]="!productInfo.isAvailable"
-		(click)="onBuy(productInfo)">Buy</button>
+		(click)="onBuy()">Buy</button>
 </div>

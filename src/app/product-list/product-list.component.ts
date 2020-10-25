@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CartService } from '../services/cart.service';
-import { Product } from '../models';
+import { Product } from '../product-list/models';
 
 import { ProductsService } from './services/products.service';
 
@@ -13,7 +13,7 @@ import { ProductsService } from './services/products.service';
 export class ProductListComponent implements OnInit, OnDestroy {
 	products: Product[];
 
-	private productsSubscription = Subscription.EMPTY;
+	private productsSubscription: Subscription;
 
 	constructor(
 		private productsService: ProductsService,
@@ -27,11 +27,13 @@ export class ProductListComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	onProductBought(ev: Product): void {
-		this.cartService.addProductToCart(ev);
+	onProductBought(product: Product): void {
+		this.cartService.addProductToCart(product);
 	}
 
 	ngOnDestroy(): void {
-		this.productsSubscription.unsubscribe();
+		if (this.productsSubscription) {
+			this.productsSubscription.unsubscribe();
+		}
 	}
 }

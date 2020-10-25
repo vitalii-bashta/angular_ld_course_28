@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { Product } from 'src/app/models';
+import { Product } from '../../../product-list/models';
 
 @Component({
 	selector: 'shop-cart-item',
@@ -10,9 +10,19 @@ import { Product } from 'src/app/models';
 })
 export class CartItemComponent {
 	@Input() cartItem: Product;
-	@Output() removeClicked: EventEmitter<Product> = new EventEmitter<Product>();
+	@Output() productDeleted: EventEmitter<Product> = new EventEmitter<Product>();
+	@Output() itemAdded: EventEmitter<Product> = new EventEmitter<Product>();
+	@Output() itemRemoved: EventEmitter<Product> = new EventEmitter<Product>();
 
 	onRemoveButtonClick(): void {
-		this.removeClicked.emit(this.cartItem);
+		this.productDeleted.emit(this.cartItem);
+	}
+
+	onAddItem(): void {
+		this.itemAdded.emit(this.cartItem);
+	}
+
+	onRemoveItem(): void {
+		this.itemRemoved.emit(this.cartItem);
 	}
 }

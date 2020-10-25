@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 
-import { Product } from '../../models';
+import { Product } from '../../product-list/models';
 import { productsMockData } from '../products-mock-data';
 
 @Injectable()
