@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 import { Product } from '../product-list/models';
 import { initialCartProducts } from '../product-list/products-mock-data';
@@ -112,10 +112,6 @@ export class CartService {
 	clearProductCart(): void {
 		this.setProductCart([]);
 		this.updateCartData();
-	}
-
-	isCartEmpty(): boolean {
-		return Boolean(this.getProductCartValue().length);
 	}
 
 	private setProductCart(products: Product[]): void {
