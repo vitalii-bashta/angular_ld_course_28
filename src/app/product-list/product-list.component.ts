@@ -21,6 +21,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
 	) { }
 
 	ngOnInit() {
+		// тут можно и не создавать подписку, воспользоваться async пайпом,
+		// будем смотреть на следцующей встрече
 		this.productsSubscription = this.productsService.getProducts()
 			.subscribe((products: Product[]) => {
 				this.products = products;
@@ -32,8 +34,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy(): void {
-		if (this.productsSubscription) {
-			this.productsSubscription.unsubscribe();
-		}
+		// if (this.productsSubscription) {
+			this.productsSubscription?.unsubscribe();
+		// }
 	}
 }
