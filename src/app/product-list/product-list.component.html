@@ -1,5 +1,5 @@
 <h2>Products</h2>
-<shop-product *ngFor="let product of products"
+<shop-product *ngFor="let product of products$ | async"
 	[productInfo]="product"
 	(productBought)="onProductBought($event)">
 </shop-product>
