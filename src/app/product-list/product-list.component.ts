@@ -15,8 +15,6 @@ import { ProductsService } from './services/products.service';
 export class ProductListComponent implements OnInit {
 	products$: Observable<Product[]>;
 
-	private productsSubscription: Subscription;
-
 	constructor(
 		private productsService: ProductsService,
 		private cartService: CartService

@@ -3,6 +3,9 @@ import { Observable } from 'rxjs';
 
 import { Product } from '../product-list/models';
 import { CartService } from '../services/cart.service';
+import { SortingOption } from './models/sorting-option.model';
+import { sortingOptions } from './constants';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
 	selector: 'shop-cart-list',
@@ -14,6 +17,8 @@ export class CartListComponent implements OnInit {
 	cartProductsAmount$: Observable<number>;
 	cartEmpty$: Observable<boolean>;
 	cartProducts$: Observable<Product[]>;
+	sortingOptions: SortingOption[] = sortingOptions;
+	currentSortingField: string = sortingOptions[0].value;
 
 	constructor(private cartService: CartService) { }
 
@@ -38,5 +43,9 @@ export class CartListComponent implements OnInit {
 
 	onItemRemoved(ev: Product): void {
 		this.cartService.decreaseProductAmount(ev, 1);
+	}
+
+	onSortingSelectionChange(ev: MatSelectChange): void {
+		this.currentSortingField = ev.value;
 	}
 }
