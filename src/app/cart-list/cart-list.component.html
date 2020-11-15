@@ -1,20 +1,35 @@
 <h2>Cart</h2>
+
+<mat-form-field >
+	<mat-label>Sort by</mat-label>
+
+	<mat-select [value]="currentSortingField" (selectionChange)="onSortingSelectionChange($event)">
+		<mat-option *ngFor="let option of sortingOptions" [value]="option.value">
+			{{ option.name | titlecase }}
+		</mat-option>
+	</mat-select>
+</mat-form-field>
+
 <ng-container *ngIf="cartEmpty$ | async; then cartListBlock; else emptyCartBlock"></ng-container>
+
 <ng-template #cartListBlock>
 	<div class="cart-items-container">
-		<shop-cart-item *ngFor="let cartProduct of cartProducts$ | async"
+		<shop-cart-item *ngFor="let cartProduct of cartProducts$ | async | orderBy: currentSortingField"
 			[cartItem]="cartProduct"
 			(productDeleted)="onProductDeleted($event)"
 			(itemAdded)="onItemAdded($event)"
 			(itemRemoved)="onItemRemoved($event)">
 		</shop-cart-item>
 	</div>
+
 	<div class="total-container">
 		<span class="total-price">Total: {{ cartProductsTotalPrice$ | async }}</span>
 		<span class="products-amount">Products ordered: {{ cartProductsAmount$ | async }}</span>
 	</div>
+
 	<button (click)="onClearCartClick()">Clear cart</button>
 </ng-template>
+
 <ng-template #emptyCartBlock>
 	<p>Cart is empty</p>
 </ng-template>

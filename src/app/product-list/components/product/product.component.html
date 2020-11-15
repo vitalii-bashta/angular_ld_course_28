@@ -1,4 +1,5 @@
 <div class="product-container">
+	<span class="category">Category: {{ productInfo.category | uppercase }}</span>
 	<span class="product-name">{{ productInfo.name }}</span>
 	<span>{{ productInfo.description }}</span>
 	<span>{{ productInfo.price | currency:'USD' }}</span>

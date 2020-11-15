@@ -13,3 +13,14 @@
 * Added possibility to edit **product quantity** in cart
 * Added **items highlight** in cart
 * Resolved all comments from previous hometask
+
+### v. 1.2
+* Did services hometask
+
+### v. 1.3
+* Did pipes hometask
+
+* **Pipes used in following components:**
+* product
+* product-list
+* cart-list

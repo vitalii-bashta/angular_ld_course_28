@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { SharedModule } from '../shared/shared.module';
 
 import { ProductsService } from './services/products.service';
 import { ProductListComponent } from './product-list.component';
@@ -7,7 +8,7 @@ import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
 	imports: [
-		CommonModule
+		SharedModule
 	],
 	declarations: [ProductListComponent, ProductComponent],
 	providers: [ProductsService],

@@ -7,6 +7,10 @@
 			<mat-icon>close</mat-icon>
 		</button>
 	</div>
+	<div>
+		<span class="cart-item-price-label">Unit price:</span>
+		<span>{{ cartItem.price | currency:'USD' }}</span>
+	</div>
 	<div class="quantity-container">
 		<span>Qty: {{ cartItem?.amountInCart }}</span>
 		<button mat-icon-button
