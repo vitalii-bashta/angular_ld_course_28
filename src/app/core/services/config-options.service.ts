@@ -12,6 +12,7 @@ export class ConfigOptionsService {
 		return this.config$.asObservable();
 	}
 
+	//  ок, но вот этого нет Предусмотреть возможность установки подмножества свойств. Например, { id, login }
 	pushValueToConfigStream(value: ConfigOption): void {
 		this.config$.next(value);
 	}
